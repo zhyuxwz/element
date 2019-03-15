@@ -105,22 +105,17 @@
       @after-leave="doDestroy">
       <el-select-menu
         ref="popper"
+        class="el-select-dropdown__wrap el-select-dropdown__list"
+        style="overflow:auto"
+        :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
         :append-to-body="popperAppendToBody"
         v-show="visible && emptyText !== false">
-        <el-scrollbar
-          tag="ul"
-          wrap-class="el-select-dropdown__wrap"
-          view-class="el-select-dropdown__list"
-          ref="scrollbar"
-          :class="{ 'is-empty': !allowCreate && query && filteredOptionsCount === 0 }"
-          v-show="options.length > 0 && !loading">
-          <el-option
-            :value="query"
-            created
-            v-if="showNewOption">
-          </el-option>
-          <slot></slot>
-        </el-scrollbar>
+        <el-option
+          :value="query"
+          created
+          v-if="showNewOption">
+        </el-option>
+        <slot></slot>
         <template v-if="emptyText && (!allowCreate || loading || (allowCreate && options.length === 0 ))">
           <slot name="empty" v-if="$slots.empty"></slot>
           <p class="el-select-dropdown__empty" v-else>
