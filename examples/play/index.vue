@@ -1,9 +1,7 @@
 <template>
-  <el-select v-model="value7" placeholder="请选择">
-    <el-option-group v-for="group in options3" :key="group.label" :label="group.label">
-      <el-option v-for="item in group.options" :key="item.value" :label="item.label" :value="item.value">
-      </el-option>
-    </el-option-group>
+  <el-select v-model="value" placeholder="请选择">
+    <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
+    </el-option>
   </el-select>
 </template>
 
@@ -11,83 +9,45 @@
 export default {
   data() {
     return {
-      options3: [
+      options: [
         {
-          label: "热门城市",
-          options: [
-            {
-              value: "Shanghai",
-              label: "上海"
-            },
-            {
-              value: "Beijing",
-              label: "北京"
-            }
-          ]
+          value: "1",
+          label: "黄金糕"
         },
         {
-          label: "城市名",
-          options: [
-            {
-              value: "Chengdu",
-              label: "成都"
-            },
-            {
-              value: "Shenzhen",
-              label: "深圳"
-            },
-            {
-              value: "Guangzhou",
-              label: "广州"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            },
-            {
-              value: "Dalian",
-              label: "大连"
-            }
-          ]
+          value: "2",
+          label: "双皮奶"
+        },
+        {
+          value: "3",
+          label: "蚵仔煎"
+        },
+        {
+          value: "4",
+          label: "龙须面"
+        },
+        {
+          value: "5",
+          label: "北京烤鸭"
+        },
+        {
+          value: "6",
+          label: "炸酱面"
+        },
+        {
+          value: "7",
+          label: "烤肉"
+        },
+        {
+          value: "8",
+          label: "螺蛳粉"
+        },
+        {
+          value: "9",
+          label: "拉面"
         }
       ],
-      value7: ""
+      value: ""
     };
   }
 };
